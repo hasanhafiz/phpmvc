@@ -1,0 +1,33 @@
+Middlewire - how it works?
+
+A basic request
+---------------------
+1. when we make a request, it passes through the front controller i.e index.php
+2. It creates a request object, that passes through the dispatcher
+3. Dispatcher decides which controller and action to be run based on the request
+4. In a controller, the action methods perform some action and return a response
+5. So when a request is made, the controller's action handles it and return a response
+
+Why we need middlewire?
+--------------------
+1. A project might have 100 of controller and a controller might have so many action. 
+2. If we want to perform a basic authentication, then we need to go through each action of a controller and perform necessary task. 
+3. This process require a lot of repetation.
+4. Plus, if we add new action method, we might forget to include common code.
+
+** The solution is to use - middlewire! ** 
+
+1. Just like the controller and action, a middlewire component processes a request and return a response.
+2. With each request, we can specify on or more middlewire component to run 
+3. This is commonly referred to as a "middlewire pipeline or a middlewire stack"
+
+4. The framework will run each middlewire component in turn.
+5. As each component is executed, it can optionally make changes the request before it passing to the next component.
+6. At the end, the controller action is executed, processing the request and returning a response.
+7. this response is passed back along the stack again, with each middlewire optionally chaning the response
+
+=== Creating a middlewire ========
+1. Create a folder "Middlewire" inside App folder. 
+2.  
+
+
